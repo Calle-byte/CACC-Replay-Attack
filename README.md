@@ -8,10 +8,10 @@ This repository contains the MATLAB implementation for simulating a 6-vehicle pl
 
 ## Repository Structure
 
-- `code/Inizializzazione_Platoon.m`: Initializes simulation parameters ($T_s, h, k_p, k_d$), vehicle states, and initial conditions.
-- `code/Dinamica_Veicoli.m`: Simulates the nominal discrete-time vehicle dynamics and explicit CACC control law.
-- `code/Dinamica_Veicoli_ReplayAttack.m`: Simulates the platoon dynamics under a Replay Attack on Vehicle 2 starting at $t = 30\text{s}$.
-- `code/Plot_Risultati.m`: Generates plots for velocities, inter-vehicle distances, spacing errors, relative distances, and accelerations.
+- `code/Inizialization_Platoon_var.m`: Initializes simulation parameters ($T_s, h, k_p, k_d$), vehicle states, and initial conditions.
+- `code/Dinamic_NoAttack.m`: Simulates the nominal discrete-time vehicle dynamics and explicit CACC control law.
+- `code/Dinamic_ReplayAttack.m`: Simulates the platoon dynamics under a Replay Attack on Vehicle 2 starting at $t = 30\text{s}$.
+- `code/Plot_Platoon.m`: Generates plots for velocities, inter-vehicle distances, spacing errors, relative distances, and accelerations.
 - `code/main.m`: Main script to execute the nominal CACC simulation.
 - `code/main_replay.m`: Main script to execute the Replay Attack scenario.
 
@@ -19,6 +19,6 @@ This repository contains the MATLAB implementation for simulating a 6-vehicle pl
 
 ## How to Run
 
-1. Clone or download this repository:
+Clone or download this repository:
    ```bash
-   git clone [https://github.com/your-username/CACC-Replay-Attack-Simulation.git](https://github.com/your-username/CACC-Replay-Attack-Simulation.git)
+   git clone [(https://github.com/Calle-byte/CACC-Replay-Attack)](https://github.com/Calle-byte/CACC-Replay-Attack)
