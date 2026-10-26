@@ -23,7 +23,7 @@ Plot_Platoon;
 
 %% Step 4: Attack Simulation
 Dinamic_RepAttack;
-%Plot_Platoon;
+Plot_Platoon;
 
 %% Step 5: Detector
 Detector;
