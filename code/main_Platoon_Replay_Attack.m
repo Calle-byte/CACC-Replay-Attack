@@ -1,16 +1,16 @@
 %% MAIN - CACC Platoon Simulation
 % This script coordinates the execution of the five modules:
-% 1. Inizialize_Platoon.m  (Parameters & state allocation)
-% 2. Dinamic_NoAttack.m          (Discrete integration of CACC control)
+% 1. Inizialize_Platoon.m      (Parameters & state allocation)
+% 2. Dinamic_NoAttack.m        (Discrete integration of CACC control)
 % 3. Plot_Platoon.m            (Data visualization)
-% 4. Dinamic_RepAttack.m          (Simulation of a Replay Attack)
+% 4. Dinamic_RepAttack.m       (Simulation of a Replay Attack)
 % 5. Detector.m                (Simulation of the Detector based on the attack)   
 
 clear; close all; clc;
 
-fprintf('===========================================\n');
-fprintf('  CACC VEHICLE PLATOON SIMULATION (Merco et al.)  \n');
-fprintf('===========================================\n\n');
+fprintf('===========================================================\n');
+fprintf(' CACC VEHICLE PLATOON SIMULATION - ATTACK AND DETECTION \n');
+fprintf('=========================================================\n\n');
 
 %% Step 1: Parameter and Variable Initialization
 Inizialize_Platoon;
