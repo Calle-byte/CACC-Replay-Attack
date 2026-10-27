@@ -13,7 +13,7 @@ fprintf(' CACC VEHICLE PLATOON SIMULATION - ATTACK AND DETECTION \n');
 fprintf('=========================================================\n\n');
 
 %% Step 1: Parameter and Variable Initialization
-Inizialize_Platoon;
+Inizialization_Platoon_var;
 
 %% Step 2: Vehicle Dynamics Computation
 Dinamic_NoAttack;
@@ -22,7 +22,7 @@ Dinamic_NoAttack;
 Plot_Platoon;
 
 %% Step 4: Attack Simulation
-Dinamic_RepAttack;
+Dinamic_ReplayAttack;
 Plot_Platoon;
 
 %% Step 5: Detector
