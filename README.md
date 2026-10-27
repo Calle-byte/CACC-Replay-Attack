@@ -1,9 +1,9 @@
 # Replay Attack Simulation in a CACC Vehicle Platoon
 
-This repository contains the MATLAB implementation for simulating a 6-vehicle platoon equipped with Cooperative Adaptive Cruise Control (CACC), evaluating both its **nominal dynamics** and its response to a **Replay Attack** on Vehicle 2[cite: 1, 5].
+This repository contains the MATLAB implementation for simulating a 6-vehicle platoon equipped with Cooperative Adaptive Cruise Control (CACC), evaluating its **nominal dynamics**, its response to a **Replay Attack** on Vehicle 2 and the implementation of a **Detector**.
 
 > **Reference Paper:**  
-> R. Merco, Z. A. Biron, and P. Pisu, *"Replay Attack Detection in a Platoon of Connected Vehicles with Cooperative Adaptive Cruise Control"*, 2018 Annual American Control Conference (ACC), Milwaukee, WI, USA, 2018, pp. 5582-5587[cite: 1].
+> R. Merco, Z. A. Biron, and P. Pisu, *"Replay Attack Detection in a Platoon of Connected Vehicles with Cooperative Adaptive Cruise Control"*, 2018 Annual American Control Conference (ACC), Milwaukee, WI, USA, 2018, pp. 5582-5587.
 
 
 ## Repository Structure
