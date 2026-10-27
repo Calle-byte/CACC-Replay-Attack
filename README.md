@@ -8,12 +8,12 @@ This repository contains the MATLAB implementation for simulating a 6-vehicle pl
 
 ## Repository Structure
 
-- `code/Inizialization_Platoon_var.m`: Initializes simulation parameters ($T_s, h, k_p, k_d$), vehicle states, and initial conditions.
+- `code/main_Platoon_Replay_Attack.m`: Main script to execute the nominal CACC simulation.
+- `code/Inizialization_Platoon_var.m`: Initializes simulation parameters, vehicle states, and initial conditions.
 - `code/Dinamic_NoAttack.m`: Simulates the nominal discrete-time vehicle dynamics and explicit CACC control law.
-- `code/Dinamic_ReplayAttack.m`: Simulates the platoon dynamics under a Replay Attack on Vehicle 2 starting at $t = 30\text{s}$.
+- `code/Dinamic_ReplayAttack.m`: Simulates the platoon dynamics under a Replay Attack on Vehicle 2 starting at t = 30sec.
 - `code/Plot_Platoon.m`: Generates plots for velocities, inter-vehicle distances, spacing errors, relative distances, and accelerations.
-- `code/main.m`: Main script to execute the nominal CACC simulation.
-- `code/main_replay.m`: Main script to execute the Replay Attack scenario.
+- `code/Detector.m`: ***.
 
 ---
 
