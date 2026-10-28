@@ -13,7 +13,7 @@ This repository contains the MATLAB implementation for simulating a 6-vehicle pl
 - `code/Dinamic_NoAttack.m`: Simulates the nominal discrete-time vehicle dynamics and explicit CACC control law.
 - `code/Dinamic_ReplayAttack.m`: Simulates the platoon dynamics under a Replay Attack on Vehicle 2 starting at t = 30sec.
 - `code/Plot_Platoon.m`: Generates plots for velocities, inter-vehicle distances, spacing errors, relative distances, and accelerations.
-- `code/Detector.m`: ***.
+- `code/Detector.m`: Implements the virtual model and the cross-correlator algorithm to detect the replay attack across different sliding window sizes.
 
 ---
 
