@@ -22,7 +22,7 @@ aBrake = -1;            % Leader deceleration during braking [m/s^2]
 
 %% Authentication Noise Signal
 var_noise = 0.001;
-%rng(42);
+rng(62);
 Delta_a0 = sqrt(var_noise) * randn(1, K);
 
 % Detection Window sizes in seconds
