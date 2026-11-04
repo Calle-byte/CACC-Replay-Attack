@@ -59,27 +59,55 @@ for w_idx = 1:length(win_sec_list)
 end
 
 
-%% Plot Detection Results
+%% Plot Detection Result
 idx_range = (t >= 20 & t <= 40);
 max_val_12s = max(g_k(3, idx_range));
 
-for w_idx = 1:length(win_sec_list)   
+for w_idx = 1:length(win_sec_list)
     g_k(w_idx, :) = smoothdata(g_k(w_idx, :), 'gaussian', round(0.8/Ts));
 end
 
-figure('Name', 'Replay Attack Detection - Cross Correlator', 'Color', 'w');
-plot(t, g_k(1, :), 'LineWidth', 1.8, 'Color', [0, 0.4470, 0.7410]); hold on;
-plot(t, g_k(2, :), 'LineWidth', 1.8, 'Color', [0.8500, 0.3250, 0.0980]);
-plot(t, g_k(3, :), 'LineWidth', 1.8, 'Color', [0.9290, 0.6940, 0.1250]);
+% Plot limits
+y_limits = [-0.0005, max_val_12s * 1.1];
 
+figure('Name', 'Replay Attack Detection - Cross Correlator', 'Color', 'w');
+hold on;
+
+% Collision region
+if ~isempty(collision_idx)
+    collision_time = t(collision_idx);
+    
+    xline(collision_time, '--r', 'LineWidth', 1.2, 'HandleVisibility', 'off');
+
+    h_region = patch( ...
+        [collision_time 50 50 collision_time], ...
+        [y_limits(1) y_limits(1) y_limits(2) y_limits(2)], ...
+        'r', 'FaceAlpha', 0.10, 'EdgeColor', 'none');
+end
+
+% Cross-correlator signals
+p1 = plot(t, g_k(1, :), 'LineWidth', 1.8, 'Color', [0, 0.4470, 0.7410]);
+p2 = plot(t, g_k(2, :), 'LineWidth', 1.8, 'Color', [0.8500, 0.3250, 0.0980]);
+p3 = plot(t, g_k(3, :), 'LineWidth', 1.8, 'Color', [0.9290, 0.6940, 0.1250]);
+
+% Replay attack starting time
 xline(tAttack, '--r', 'LineWidth', 1.2, 'HandleVisibility', 'off');
+
 grid on;
 xlim([0 50]);
-
-ylim([-0.0005, max_val_12s * 1.1]);
+ylim(y_limits);
 
 xlabel('time [s]', 'FontSize', 11);
 ylabel('cross correlation g_k', 'FontSize', 11);
 title('cross correlator', 'FontSize', 12, 'FontWeight', 'bold');
-legend({'window 3 sec', 'window 8 sec', 'window 12 sec'}, ...
-       'Location', 'northeast', 'FontSize', 10);
+
+% Legend
+if ~isempty(collision_idx)
+    legend([p1, p2, p3, h_region], ...
+        {'window 3 sec', 'window 8 sec', 'window 12 sec', 'Collision area'}, ...
+        'Location', 'northeast', 'FontSize', 10);
+else
+    legend([p1, p2, p3], ...
+        {'window 3 sec', 'window 8 sec', 'window 12 sec'}, ...
+        'Location', 'northeast', 'FontSize', 10);
+end
